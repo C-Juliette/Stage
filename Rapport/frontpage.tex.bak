@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{mathtools}  % amsmath with extensions
+\usepackage{amsfonts} 
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,  vmargin=2.5cm}
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+   \vspace{-1cm}
+	 \includegraphics[width=0.8\textwidth]{logo.png}
+	  \vspace{1cm}
+	  
+	  \LARGE Rapport de stage - M1 Ingénierie Statistique
+       
+       \vspace{2.5cm}
+       \large
+       
+        \textbf{Bonnes pratiques pour le développement collaboratif de logiciel \\
+       \vspace{0.5cm}
+        Application au développement de packages R et d’un module Python autour de l’inférence statistique par permutation avec implémentation de tests unitaires}
+            
+       \vspace{3.5cm}
+
+      
+
+       \vfill
+            
+       
+
+      \includegraphics[width=0.6\textwidth]{logoNantes.png}
+      
+		\vspace{0.8cm}
+		
+      Auteur :  \textbf{Chiapello Juliette} \\
+      \vspace{0.3cm}
+      Encadrant de stage  :  \textbf{Stamm Aymeric}\\
+      Ingénieur de recherche
+       
+       \vspace{0.8cm}
+       
+       Laboratoire de Mathématiques Jean Leray\\
+       Université de Nantes\\
+       Juin - Juillet 2021
+            
+   \end{center}
+\end{titlepage}
+
+\newpage
+
+$x_1,  x_2, ... , x_n \in \mathbb{R}$
+
+ \vspace{0.8cm}
+ 
+ $v_1,  v_2, ... , v_n \in \mathbb{R}^p,  \quad p \geq 2$
+ 
+  \vspace{0.8cm}
+  
+  $f_1,  f_2, ... , f_n \in \mathcal{L}^p,  \quad p \geq 2$
+  
+   \vspace{0.8cm}
+   
+   $g_1,  g_2, ... , g_n$
+
+
+\end{document}
