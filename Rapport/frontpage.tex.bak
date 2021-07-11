@@ -6,6 +6,7 @@
 \usepackage{mathtools}  % amsmath with extensions
 \usepackage{amsfonts} 
 \usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
 \geometry{hmargin=2.5cm,  vmargin=2.5cm}
 \begin{document}
 
@@ -37,6 +38,7 @@
 		\vspace{0.8cm}
 		
       Auteur :  \textbf{Chiapello Juliette} \\
+      M1 Ingénierie Statistique\\
       \vspace{0.3cm}
       Encadrant de stage  :  \textbf{Stamm Aymeric}\\
       Ingénieur de recherche
@@ -65,6 +67,46 @@ $x_1,  x_2, ... , x_n \in \mathbb{R}$
    \vspace{0.8cm}
    
    $g_1,  g_2, ... , g_n$
-
+   \vspace{0.8cm}
+      
+ \textcolor{Green}{library(devtools)\\
+ create\_package(“path/Mypackage")\\
+ use\_mit\_licence(“Jane Doe")\\
+ use\_readme\_rmd()\\
+ build\_readme()\\
+ use\_r(“Afunction")\\
+ load\_all()\\
+ check()\\
+ install()\\
+  use\_package(“package\_name")\\
+  document()\\
+ }      
+ 
+      
+         \vspace{0.8cm}
+         
+          \textcolor{Cyan}{library(testthat)\\
+ use\_testthat()\\
+ use\_test(“Afunction")\\
+ test()
+ }
+         
+            \vspace{0.8cm}
+   
+             \textcolor{Plum}{
+Mypackage.Rproj \\         
+Afunction.R \\
+test-Afunction.R \\
+README.md \\
+README.rmd \\
+DESCRIPTION
+ }
+ 
+ CMD + SHIFT + T\\
+ CRTL + SHIFT + T\\
+ 
+        \textcolor{Blue}{dadazd}
+        
+        package\_name::thefunctionyouneed()
 
 \end{document}

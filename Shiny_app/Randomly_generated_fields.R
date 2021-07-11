@@ -1,5 +1,3 @@
-source('Distributions.R')
-
 selectInput_distributions <- function(inputId){
 return (selectInput(inputId = inputId,
             label = "Choose a random distribution",

@@ -40,7 +40,7 @@ ui <- dashboardPage(
               )
       ),
       
-      # Onglet randomly genrated fields
+      # Onglet randomly generated fields
       tabItem(tabName = "Couple_distribution_matrice",
               fluidRow(
                  
@@ -78,7 +78,7 @@ ui <- dashboardPage(
               #)
       ),
 
-      # Second tab content
+      # Onglet Moving average
       tabItem(tabName = "Moyenne_glissante",
               fluidRow(
 

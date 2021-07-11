@@ -31,19 +31,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 # Introduction  {-#Introduction}
 
- Le stage a été initié à ma demande car je souhaitais apprendre différentes pratiques relatives à la programmation, appliquée dans un contexte mathématique. Ces pratiques concernaient : 
+ Le stage a été initié à ma demande car je souhaitais apprendre différentes pratiques relatives à la programmation, appliquées dans un contexte mathématique. Ces pratiques concernaient : 
  \begin{itemize}
-  \item la création de classe dans R et Python,
+  \item la création de classes dans R et Python,
  \item l'utilisation de tests unitaires dans le développement de fonctions/packages destiné(e)s à des utilisateurs,
  \item une meilleure connaissance de ggplot2,
  \item la création de packages,
  \item la création de belles visualisations,
+ \item l'utilisation du débugger dans Rstudio,
  \item le clean code.
-
 \end{itemize}
 
  
- Mon encadrant de stage, Aymeric Stamm, m'a proposé de travailler sur un des packages qu'il développe en R et Python : le package *flipr* en R (et *flipy* en Python). Participer au développement de *flipr* devait en effet me permettre d'effectuer une phase de recherche documentaire puis de mettre en pratique les compétences précédemment citées. J'avais de plus demandé à pouvoir davantage coder en Python qu'en R par simple préférence.
+ Mon encadrant de stage, Aymeric Stamm, m'a proposé de travailler sur un des packages qu'il développe en R et Python : le package *flipr* en R (et *flippy* en Python). Participer au développement de *flipr* devait en effet me permettre d'effectuer une phase de recherche documentaire puis de mettre en pratique les compétences précédemment citées. J'avais de plus demandé à pouvoir davantage coder en Python qu'en R par simple préférence.
  
  Nous avons donc intitulé le stage de la façon suivante : 
  
@@ -61,11 +61,11 @@ Le stage a commencé quelques mois plus tard. Entre temps, avec deux de mes cama
 
 Le stage a donc débuté ainsi, par la création d'un package R à partir d'un ensemble de fonctions déjà implémentées. Cela correspondra à la première partie de ce rapport. La mise en ligne de documents et plus particulièrement de code et de package sur Github est aussi expliquée à cet endroit.
 
-Ensuite, nous avons discuté du fait de concevoir une Shiny App (une application) avec des fonctionnalités faisant appel à ce code. La conception de cette Shiny App sera expliquée dans la deuxième partie du rapport.
+Ensuite, nous avons discuté du fait de concevoir une Shiny App (une application) avec des fonctionnalités faisant appel à ce code. La conception de cette Shiny App est expliquée dans la deuxième partie du rapport.
 
 En parallèle de ces premières considérations, nous avons envisagé de tester le code avec des tests unitaires. Cette étape a été un des points centraux du stage. Tout le développement concernant les tests unitaires en particulier, et les tests utilisé en informatique en général, constitue la troisième partie du rapport.
 
-Ayant rodé la méthode de test avec le package simple issu du projet en géostatistique réalisé dans l'année, nous avons alors convenu du fait que je pouvais commencer à travailler sur le package développé par Aymeric Stamm, à savoir *flipr*. Le fonctionnement de *flipr* est exposé dans la quatrième partie de ce rapport.
+Ayant rodé la méthode de test avec le package simple issu du projet en géostatistique réalisé dans l'année, nous avons alors convenu du fait que je pouvais commencer à travailler sur le package développé par Aymeric Stamm, à savoir *flipr*. Le fonctionnement de *flipr* est exposé dans la quatrième partie du rapport.
 
 \vspace{1cm}
 
@@ -74,15 +74,29 @@ Ayant rodé la méthode de test avec le package simple issu du projet en géosta
 \newpage
 # Création d'un package R
 
+Le projet de géostatistique que nous avons rendu, Céline, Léonie et moi, en cours de semestre nous avait permis de mettre en place un code R ayant différentes fonctionnalités. Parmi celles-ci, 
+
 \vspace{0.5cm}
-## Le package
+## Le package : moyenne glissante sur des grilles de nombres
 \vspace{0.5cm}
 
 Etapes de création de package
 
+
+\newpage
+
+![](Package_CS.pdf)
+
+\newpage
+
 \vspace{0.5cm}
 ## Github 
 \vspace{0.5cm}
+
+
+
+
+
 
 Git et github, utilisation
 
@@ -97,7 +111,7 @@ UI, server, reactivité
 \newpage
 # Informatique : test du code et bonnes pratiques
 \vspace{0.5cm}
-Cette troisième partie aborde un sujet portant sur l'informatique en laissant de côté les mathématiques. Elle  traite le sujet des tests en informatique et conclut sur quelques bonnes pratiques de développement en général. Elle expose tout d'abord quelques grands types de tests (seront présentés succintement les tests unitaires, les tests d'intégration, les tests fonctionnels, les tests de validation et les golden tests) et détaille les raisons pour lesquelles écrire ces tests sont importantes. Une section sera ensuite dédiée plus particulièrement aux tests unitaires pour préciser les pratiques usuelles à propos de quoi tester, comment tester, et comment évaluer la qualité des tests. Ensuite le sujet des tests d'intégration sera lui aussi abordé avec quelques considérations sur les avantages et les inconvénients de ces tests par rapport aux tests unitaires. Nous nous en tiendrons au détail de ces deux premiers niveaux : tests unitaires et tests d'intégrations.
+Cette troisième partie aborde un sujet portant sur l'informatique en laissant de côté les mathématiques. Elle  traite le sujet des tests en informatique et conclut sur quelques bonnes pratiques de développement en général. Elle expose tout d'abord quelques grands types de tests (seront présentés succintement les tests unitaires, les tests d'intégration, les tests fonctionnels, les tests de validation et les golden tests) et détaille les raisons pour lesquelles il est important d'écrire ces tests. Une section sera ensuite dédiée plus particulièrement aux tests unitaires pour préciser les pratiques usuelles à propos de quoi tester, comment tester, et comment évaluer la qualité des tests. Puis, le sujet des tests d'intégration sera lui aussi abordé avec quelques considérations sur leurs avantages et leurs inconvénients par rapport aux tests unitaires. Nous nous en tiendrons au détail de ces deux premiers niveaux : tests unitaires et tests d'intégrations.
 
 
 Cette troisième partie s'appuie sur la synthèse de différentes conférences Devox (the developer community conference) et vidéos suivies sur youtube et de quelques documents supplémentaires en ligne.
@@ -121,6 +135,7 @@ Les vidéos/conférences suivies sont les suivantes :
  \vspace{0.2cm}
  
   \item « Victor Rentea - Unit Testing like a Pro: The Circle of Purity» \\
+  Entre autres, lead architect chez IBM.
   
    \vspace{-0.5cm}
  \underline{https://www.youtube.com/watch?v=1Z\_h55jMe-M}
@@ -139,7 +154,7 @@ Les vidéos/conférences suivies sont les suivantes :
 ## Présentation générale des tests
 \vspace{0.5cm}
 
-Développer un programme nécessite de vérifier qu'il fonctionne et ce à différents niveaux : c'est l'objectif des tests en informatique. Voici donc les différents types de tests possibles, présentés en partant des tests exécutant les opérations plus élémentaires possibles jusqu'aux tests réalisant des vérifications beaucoup plus globales. C'est une classification possible qui est présentée, elle n'a pas vocation à être absolue.
+Développer un programme nécessite de vérifier qu'il fonctionne et ce à différents niveaux : c'est l'objectif des tests en informatique. Voici donc les différents types de tests possibles, présentés en partant des tests exécutant les opérations les plus élémentaires jusqu'aux tests réalisant des vérifications beaucoup plus globales. C'est une classification possible qui est présentée, elle n'a pas vocation à être unique ni unanime.
 
 \vspace{0.5cm}
 **Tests unitaires**
@@ -151,7 +166,7 @@ Les tests vérifiant les opérations les plus élémentaires sont les tests unit
 **Tests d'intégration**
 \vspace{0.2cm}
 
-Une fois que plusieurs parties du code (par exemple des modules) sont écrites et que tous leurs tests unitaires passent avec succès, il faut vérifier que les interactions entre les parties du code fonctionnenent : c'est l'objet des tests d'intégration. A titre d'exemple (je reprend ici le modèle du youtubeur MPJ dans sa vidéo *[Unit tests vs. Integration tests ](https://www.youtube.com/watch?v=vqAaMVoKz1c&t=2s)*), l'on peut imaginer une application qui comprend : une interface utilisateur, une partie servant à réaliser des calculs, un système de payement et une base de données. Ces quatres parties peuvent être testées indépendemment avec un ensemble de tests unitaires et très bien fonctionner. En plus de cela, les tests d'intégration permettent de vérifier qu'elles fonctionnent correctement lorsqu'elles font appel les unes aux autres. Il suffit que l'une d'elles donne en sortie un certain type d'objet servant d'entrée à une autre partie du code conçue pour recevoir un autre type d'entrée et les tests d'intégration ne fonctionnent plus, même si indépendemment les unes des autres, toutes les parties du code fonctionnent. Les tests d'intégration ne peuvent pas être aussi exhaustifs que les tests unitaires car cela impliquerait de tester de trop nombreuses combinaisons possibles entre les composants : il faut faire des choix.
+Une fois que plusieurs parties du code (par exemple des modules) sont écrites et que tous leurs tests unitaires passent avec succès, il faut vérifier que les interactions entre les parties du code fonctionnenent : c'est l'objet des tests d'intégration. A titre d'exemple (je reprends ici le modèle du youtubeur MPJ dans sa vidéo *[Unit tests vs. Integration tests ](https://www.youtube.com/watch?v=vqAaMVoKz1c&t=2s)*), on peut imaginer une application qui comprend : une interface utilisateur, une partie servant à réaliser des calculs, un système de paiement et une base de données. Ces quatres parties peuvent être testées indépendemment avec un ensemble de tests unitaires et très bien fonctionner. En plus de cela, les tests d'intégration permettent de vérifier qu'elles fonctionnent correctement lorsqu'elles font appel les unes aux autres. Il suffit que l'une d'elles donne en sortie un certain type d'objet servant d'entrée à une autre partie du code conçue pour recevoir un autre type d'entrée et les tests d'intégration ne fonctionnent plus, même si indépendemment les unes des autres, toutes les parties du code fonctionnent. Les tests d'intégration ne peuvent pas être aussi exhaustifs que les tests unitaires car cela impliquerait de tester de trop nombreuses combinaisons possibles entre les composants : il faut faire des choix.
 
 
 
@@ -161,7 +176,7 @@ Une fois que plusieurs parties du code (par exemple des modules) sont écrites e
 **Tests fonctionnels**
 \vspace{0.2cm}
 
-Les tests fonctionnels se placent du point de vue de l'utilisateur et consistent à imaginer quelles séries d'actions il va effectuer. Il s'agit de vérifier que ces séries d'actions fonctionnent. Dans l'application précédemment présentée, l'on peut vouloir vérifier le fait que si l'on souhaite payer, on puisse le faire (cela fait appel à l'interface utilisateur, la partie calcul, et le système de payement) : l'utilisateur va cliquer sur une série de boutons et éventuellement rentrer des informations. C'est tout le déroulement de la procédure qui est testé. Comme les tests d'intégration, les tests fonctionnels ne peuvent pas être aussi exhaustifs que les tests unitaires. 
+Les tests fonctionnels se placent du point de vue de l'utilisateur et consistent à imaginer quelles séries d'actions il va effectuer. Il s'agit de vérifier que ces séries d'actions fonctionnent. Dans l'application précédemment présentée, l'on peut vouloir vérifier le fait que si l'on souhaite payer, on puisse le faire (cela fait appel à l'interface utilisateur, la partie calcul, et le système de paiement) : l'utilisateur va cliquer sur une série de boutons et éventuellement rentrer des informations. C'est tout le déroulement de la procédure qui est testé. Comme les tests d'intégration, les tests fonctionnels ne peuvent pas être aussi exhaustifs que les tests unitaires. 
 
 
 \vspace{0.5cm}
@@ -196,7 +211,7 @@ La raison la plus évidente d'écrire des tests unitaires est d'obtenir une preu
 **Refactoring**
 \vspace{0.2cm}
 
-La réecriture continuelle du code fait partie intégrante des processus de développement. Cela peut être pour lui ajouter de nouvelles fonctionnalités. Mais cela peut aussi simplement servir à le rendre plus clair ou plus efficace. Dans les deux cas cela porte le nom de *refactoring*. Les tests unitaires permettent de modifier le code et de savoir facilement si celui-ci continue à fonctionner correctement après modification, autrement dit de vérifier qu'il n'y a pas eu de régression. (Le terme de *régression* est le terme consacré pour parler d'un code modifié qui contient des erreurs ou qui a perdu des fonctionnalités de manière non-voulue). La première raison pour laquelle écrire des tests unitaires est donc : arrêter d'avoir peur de remanier le code. 
+La réécriture continuelle du code fait partie intégrante des processus de développement. Cela peut être pour lui ajouter de nouvelles fonctionnalités. Mais cela peut aussi simplement servir à le rendre plus clair ou plus efficace. Dans les deux cas cela porte le nom de *refactoring*. Les tests unitaires permettent de modifier le code et de savoir facilement si celui-ci continue à fonctionner correctement après modification, autrement dit de vérifier qu'il n'y a pas eu de régression. (Le terme de *régression* est le terme consacré pour parler d'un code modifié qui contient des erreurs ou qui a perdu des fonctionnalités de manière non voulue). La première raison pour laquelle écrire des tests unitaires est donc : arrêter d'avoir peur de remanier le code. 
 
 La citation suivante de Robert C. Martin à ce sujet transmet parfaitement cette idée : 
 
@@ -207,7 +222,7 @@ La citation suivante de Robert C. Martin à ce sujet transmet parfaitement cette
 
 *[...] You need a suite of tests you trust with your life ! »*
 
-Les tests unitaires permettent donc de s'assurer non-seulement du fait que le code fonctionne, mais surtout du fait qu'il continue de fonctionner après modifications : on peut remanier le code sans craindre les phénomène de régression.
+Les tests unitaires permettent donc de s'assurer non seulement du fait que le code fonctionne, mais surtout du fait qu'il continue de fonctionner après modifications : on peut remanier le code sans craindre les phénomènes de régression.
 
 
 
@@ -216,7 +231,7 @@ Les tests unitaires permettent donc de s'assurer non-seulement du fait que le co
 **Point de vue utilisateur, meilleur design**
 \vspace{0.2cm}
 
-Le tests unitaires, s'ils sont écrit avant de commencer de coder (nous reviendrons sur ce concept par la suite), permettent de définir précisément les fonctionnalités que l'on souhaite obtenir avec le code, en se plaçant d'un point de vue utilisateur. Ils nous font aussi garder à l'esprit les spécifications qui doivent caractériser le code. Cela a en général pour conséquence un meilleur design du code et évite ce que l'on appelle l'*over-engineering* : la quantité de code écrite n'a pas de fonctionnalités superflues. 
+Le tests unitaires, s'ils sont écrits avant de commencer de coder (nous reviendrons sur ce concept par la suite), permettent de définir précisément les fonctionnalités que l'on souhaite obtenir avec le code, en se plaçant d'un point de vue utilisateur. Ils nous font aussi garder à l'esprit les spécifications qui doivent caractériser le code. Cela a en général pour conséquence un meilleur design du code et évite ce que l'on appelle l'*over-engineering* : la quantité de code écrite n'a pas de fonctionnalités superflues. 
 
 \vspace{0.5cm}
 
@@ -234,7 +249,7 @@ Sur du moyen à long terme, les tests unitaires représentent un gain de temps c
 
 ### Les tests unitaires en pratique
 
-Cette partie détaille comment écrire les tests et quoi tester.
+Cette partie détaille comment écrire les tests et que tester.
 
 \vspace{0.5cm}
 
@@ -300,20 +315,19 @@ Nous proposons de classer les tests unitaires en deux grands types : les tests d
 *Tests de régularité*
 \vspace{0.2cm}
 
-Les tests de régularité vérifient que les sorties générées par le code correspondent à celles attendues. Ils sont structuré comme présenté dans la partie **Principe et structure**. Nous prenons en exemple la fonction *variance()* qui retourne la variance non-corrigée d'une série de nombre. 
+Les tests de régularité vérifient que les sorties générées par le code correspondent à celles attendues. Ils sont structurés comme présenté dans la partie **Principe et structure**. Nous prenons en exemple la fonction *variance()* qui retourne la variance non-corrigée d'une série de nombre. 
 
 \vspace{0.5cm}
 ```{r}
 variance <- function(M){
-  if (is.data.frame(M)){M <- as.matrix(M)}
-  if (!is.vector(M) & !is.matrix(M)){stop("M must be a number/vector/matrix/dataframe")}
+  if (!is.vector(M) & !is.matrix(M)){stop("M must be a number/vector/matrix/")}
   if (!is.numeric(M)){stop("M must contain numeric values")}
   return(mean(M**2, na.rm = TRUE) - mean(M, na.rm = TRUE)**2)
 }
 ```
 \vspace{0.5cm}
 
-Nous exposons ici une liste des différents cas de figure que nous avons rencontrés en créant ces tests et en nous renseignant sur quoi tester. Encore une fois, il ne s'agit pas d'une classification absolue mais d'une proposition.
+Nous exposons ici une liste des différents cas de figure que nous avons rencontrés en créant ces tests et en nous renseignant sur que tester. Encore une fois, il ne s'agit pas d'une classification absolue mais d'une proposition.
 
 - Les tests particuliers dont les sorties sont très faciles à prévoir. 
 
@@ -323,17 +337,17 @@ Par exemple : on peut tester la variance d'une série de zéros ou d'une série 
 
 Par exemple : on peut tester la variance d'une série statistique générée aléatoirement mais toujours avec le même noyau (il s'agit donc toujours de la même série). Pour cela on utilise la fonction *set.seed()*. 
 
-- Les tests qui invoquant des valeurs extremes ou des valeurs pouvant poser problème. 
+- Les tests invoquant des valeurs extrêmes ou des valeurs pouvant poser problème. 
 
-Par exemple : on peut tester la variance d'une série statistique qui contient le plus grand ou le petit nombre de type *double*. Pour cela on utilise les commandes *.Machine\$double.xmax* et *.Machine\$double.xmin*. Pour le type *integer* ce sont les commandes *.Machine\$integer.max* et *.Machine\$integer.min*.
+Par exemple : on peut tester la variance d'une série statistique qui contient le plus grand ou le petit nombre de type *double* représentable par la machine sur laquelle le code est exécuté. Pour cela on utilise les commandes *.Machine\$double.xmax* et *.Machine\$double.xmin*. Pour le type *integer* ce sont les commandes *.Machine\$integer.max* et *.Machine\$integer.min*.
 
 Si jamais on est dans le cas d'un nombre à multiplier (par un nombre >1) , on peut simplement empêcher l'utilisateur de rentrer un nombre dont la sortie dépasserait la limite, ou simplement savoir que la machine retournera "Inf".
 
-Si jamais le passage par des nombres trop grands ne représente qu'une étape dans les calculs avant de ré-obtenir des plus petits nombres en sortie, on peut travailler en log et prendre l'exponentielle à la fin.
+Si jamais le passage par des nombres trop grands ne représente qu'une étape dans les calculs avant de ré-obtenir des plus petits nombres en sortie, on peut travailler en échelle logarithmique et et revenir à l'échelle originale en sortie (en prenant l'exponentielle).
 
 Parmi les valeurs pouvant poser problèmes, on notera aussi les valeurs proches de zéros pour les divisions.
 
-Pour les chaîne de caractère, on peut tester des chaînes avec des caractères spéciaux, une chaîne vide ou encore une chaîne très longue. 
+Pour les chaîne de caractères, on peut tester des chaînes avec des caractères spéciaux, une chaîne vide ou encore une chaîne très longue. 
 
 - Les tests qui vérifient les différentes entrées que l'on peut prendre (ils peuvent se recouper avec les précédents).
 
@@ -371,9 +385,10 @@ On peut tester :
 - les situations qui n'empêchent pas le code de tourner mais qui peuvent renvoyer des warnings : par exemple si certaines valeurs d'une série sont en réalité des valeurs manquantes. 
 
 \newpage
-La structure des tests d'anomalie peut différer de la structure des tests de régularité. Voici un exemple :
+La structure des tests d'anomalie diffère de la structure des tests de régularité car les parties \textcolor{red}{ACT} et \textcolor{red}{ASSERT} sont réunies. Voici un exemple :
 
 \vspace{0.5cm}
+
 ```{r}
 test_that("Anomaly test - error when the parametre is a function", {
   # arrange
