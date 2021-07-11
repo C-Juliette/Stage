@@ -74,13 +74,29 @@ Ayant rodé la méthode de test avec le package simple issu du projet en géosta
 \newpage
 # Création d'un package R
 
-Le projet de géostatistique que nous avons rendu, Céline, Léonie et moi, en cours de semestre nous avait permis de mettre en place un code R ayant différentes fonctionnalités. Parmi celles-ci, 
+Le projet de géostatistique que nous avons rendu, Céline, Léonie et moi, nous avait permis de mettre en place un code R regroupant plusieurs fonctions. Ce sont ces fonctions qui ont été reprises pour la création du package. Nous allons tout d'abord rappeller ces principales fonctionnalités. Puis, cette partie présentera les principales étapes de création d'un package R. Enfin, nous verrons comment mettre le package en ligne sur Github et comment installer les badges servant à vérifier que le package fonctionne et que le code est couvert par des tests unitaires.
+
+## Le package : méthodes à noyau - champ aléatoire structurés
+
+Le package R, qui reprend les fonctions codées dans le projet rendu en cours d'année, a pour but de permettre les opérations suivantes :
+
+- représenter des matrices $Z$ par des grilles de couleurs, 
+- créer de nouvelles grilles $Y$ par moyenne glissantes sur des grilles $Z$ existantes (méthode à noyau ou le noyau est une fonction moyenne). La moyenne glissante a pour support une fenêtre (glissante). 
+
+On se place ensuite dans le cadre spécifique de grilles $Z$ générées aléatoirement à partir de lois statistiques connues. Les matrices $Z$ n'ont donc pas de structures spatiales. En revanche, les grilles $Y$ possèdent des structures spatiales. C'est une conséquence de la moyenne glissante : certains couples de points (ceux issus de fenêtres qui se recouvrent) ont une covariance non-nulle. On peut montrer que cette covariance ne dépend que de la distance entre les points (stationnarité d'ordre 2). Il est alors possible de : 
+
+- construire de façon empirique le graphique de la covariance en fonction de la distance entre deux points d'une grille structurée $Y$,
+- établir ce graphique de façon théorique : il suffit de connaître l'écart-type de la loi ayant servi à générer la grille initiale $Z$.
+
+Enfin, le package assure aussi la fonctionnalité de :
+
+- réaliser des moyennes par blocs,
+- calculer la perte de variance suite à ces moyennes par blocs.
 
 \vspace{0.5cm}
-## Le package : moyenne glissante sur des grilles de nombres
+## Etapes de création de package R
 \vspace{0.5cm}
 
-Etapes de création de package
 
 
 \newpage
@@ -90,7 +106,7 @@ Etapes de création de package
 \newpage
 
 \vspace{0.5cm}
-## Github 
+## Mise en ligne sur Github 
 \vspace{0.5cm}
 
 
