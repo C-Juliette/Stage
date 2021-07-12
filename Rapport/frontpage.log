@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.27)  9 JUL 2021 23:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.27)  12 JUL 2021 09:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -359,11 +359,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+
+ []
+
 [1] (./frontpage.aux) ) 
 Here is how much of TeX's memory you used:
  4139 strings out of 480608
  60199 string characters out of 5903629
- 317845 words of memory out of 5000000
+ 318845 words of memory out of 5000000
  19968 multiletter control sequences out of 15000+600000
  534941 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -378,7 +393,7 @@ cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb>
-Output written on frontpage.pdf (2 pages, 308818 bytes).
+Output written on frontpage.pdf (2 pages, 308847 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
