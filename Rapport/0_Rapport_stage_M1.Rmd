@@ -100,7 +100,7 @@ Enfin, le package assure aussi la fonctionnalité de :
 \vspace{0.5cm}
 ## Etapes de création et de développement de package R
 \vspace{0.5cm}
-Cette section résume les étapes de la création de package en R. Elle s'appuie sur la documentation suivante [https://r-pkgs.org](https://r-pkgs.org).L'ensemble de la procédure est récapitulée sur la Figure 1 ci-dessous.
+Cette section résume les étapes de la création de package en R. Elle s'appuie sur la documentation suivante [https://r-pkgs.org](https://r-pkgs.org). L'ensemble de la procédure est récapitulée sur la Figure 1 : Cheat sheet R packages.
 
 \vspace{0.5cm}
 ### Initialisation du package (étapes à ne faire qu'une seule fois)
@@ -133,19 +133,19 @@ si l'on souhaite que la librairie permettant de faire des tests unitaires (voir 
 **Création du package**
 \vspace{0.5cm}
 
-Entrons désormais dans le vif du sujet. La commande *create_package("chemin/Nomdupackage")* permet de créer un nouveau package à l'endroit voulu. A cette occasion sont crées plusieurs éléments :
+La commande *create_package("chemin/Nomdupackage")* permet de créer un nouveau package à l'endroit voulu. A cette occasion sont crées plusieurs éléments :
 
 - un dossier **R** qui contiendra les fonctions,
 - un fichier **NAMESPACE**, qui déclare les fonctions à exporter (celles du package) et celles à importer (celles provenant de d'autres packages),
 - un fichier **DESCRIPTION**, déclarant entre autre le nom de l'auteur, la license et les éventuels autres packages utilisés,
-- une session R : **Nomdupackage.Rproj**, qui s'ouvre automatiquement, et qui sera à systématiquement utiliser pour ce projet.
-- des fichiers cachés : **.Rbuildignore** (déclare les fichiers à ignorer lorsque le package est *built*), **.gitignore**, qui anticipe l'usage de Git et spécifie certains fichiers à ignorer par Git, **.Rproj.user** qui est un dossier interne à RStudio.  
+- une session R **Nomdupackage.Rproj**, qui s'ouvre automatiquement, et qui sera à systématiquement utiliser pour ce projet,
+- des fichiers cachés : **.Rbuildignore**, qui déclare les fichiers à ignorer lorsque le package est compilé, **.gitignore**, qui anticipe l'usage de Git et spécifie certains fichiers à ignorer par Git, **.Rproj.user** qui est un dossier interne à RStudio.  
 
 \vspace{0.5cm}
 **Fichier DESCRIPTION**
 \vspace{0.5cm}
 
-Le fichier **DESCRIPTION** peut alors être complété avec le nom du ou des auteur(s), et avec un titre détaillé (champ *Title*) et une description (champ *Description*).
+Le fichier **DESCRIPTION** est à compléter avec le nom du ou des auteur(s), et avec un titre détaillé (champ *Title*) et une description (champ *Description*).
 
 \vspace{0.5cm}
 **License**
@@ -159,26 +159,26 @@ Vient ensuite le choix de la license. Le site officiel conseille la licence MIT 
 
 Enfin, les fichiers **README.md** et **README.rmd**, donnant une description du package aux utilisateurs, peuvent être générés avec les commandes *use_readme_rmd()* et *build_readme()*. Ils sont à compléter.
 
-La phase d'écriture des fonctions ou des classes peut maintenant commencer.
+La phase d'écriture des fonctions ou des classes peut alors commencer.
 
 \vspace{0.5cm}
 ### Développement du package (étapes à faire de façon cycliques)
 \vspace{0.5cm}
 
-On se place toujours dans la session R du **Nomdupackage.Rproj**.
+On se place toujours dans la session R **Nomdupackage.Rproj**.
 
 \vspace{0.5cm}
 **Création de fonction**
 \vspace{0.5cm}
 
-Pour créer une fonction, on utilise la commande *use_r("Nom_de_la_fonction")*. Cela crée un fichier **Nom_de_la_fonction.R** dans le dossier **R**. On peut alors écrire la fonction dans ce nouveau fichier. Si la fonction a besoin d'appeller des fonctions d'autres packages, il est possible d'utiliser la commande *use_package()*. Cela ajoutera le nom du nom package appelé aux imoprt du fichier **DESCRIPTION**. Par exemple, si l'on souhaite utiliser ggplot2, on écrira *use_package("ggplot2")*. Ensuite, on peut utiliser les fonctions du package en utilisant la syntaxe "::" pour spécifier l'appartenance des fonctions à ce package. Par exemple *ggplot2::aes*. Autre possibilité si la syntaxe avec les deux points alourdie vraiment trop le code (comme dans le cas de ggplo2) : rajouter une ligne
+Pour créer une fonction, on utilise la commande *use_r("Nom_de_la_fonction")*. Cela crée un fichier **Nom_de_la_fonction.R** dans le dossier **R**. On peut alors écrire la fonction dans ce nouveau fichier. Si la fonction a besoin d'appeller des fonctions d'autres packages, il est possible d'utiliser la commande *use_package()*. Cela ajoutera aux imports du fichier **DESCRIPTION** le nom du package appelé. Par exemple, si l'on souhaite utiliser ggplot2, on écrira *use_package("ggplot2")*. Ensuite, on peut utiliser les fonctions du package en utilisant la syntaxe "::" pour spécifier l'appartenance des fonctions à ce package. Par exemple *ggplot2::aes*. Autre possibilité si la syntaxe avec les deux points alourdie vraiment trop le code (comme dans le cas de ggplo2) : rajouter une ligne
 
 ```{r, eval=FALSE}
 #' @import ggplot2
 ```
 
 dans la documentation de la fonction (voir le paragraphe sur la documentation). On peut alors appeler directement les fonctions voulues sans avoir recours à la syntaxe avec les deux points.
-On peut noter de penser à limiter le nombre de dépendences avec d'autres packages. Cela évite aux utilisateurs de notre package d'installer d'autres packages non-voulus sur leur ordinateur. On peut éventuellement recoder des fonctions pour limiter les dépendances. 
+On notera de penser à limiter le nombre de dépendences avec d'autres packages. Cela évite aux utilisateurs de notre package d'installer d'autres packages non-voulus sur leur ordinateur. Il est possible d'éventuellement recoder des fonctions pour limiter les dépendances. 
 
 La commande *load_all()* permet de charger le package et de rendre la fonction disponible. Les raccourcis clavier sont : CRTL + SHIFT + L pour Windows et Linux et CMD + SHIFT + L pour Mac OS.
 
@@ -186,24 +186,26 @@ La commande *load_all()* permet de charger le package et de rendre la fonction d
 **Tests unitaires**
 \vspace{0.5cm}
 
-Il est possible de mettre en place des tests unitaires pour vérifier que la fonction se comporte bien comme attendue (voir la troisième partie du rapport pour la procédure détaillée des tests). La mailleure pratique (le Test Driven Developpement) est même d'écrire chaque test en amont, avant d'écrire les lignes correspondantes dans la fonction. Cependant, si cela est considéré comme la meilleure pratique de développement, cela n'influe pas sur la création du package à proprement parler. Nous conseillons tout de même d'écrire des tests, avant ou après l'écriture de la fonction. Pour cela, on utilise les deux commandes successives :
+La mise en place des tests unitaires pour vérifier que la fonction se comporte bien comme attendue (voir la troisième partie du rapport pour la procédure détaillée des tests) est une bonne pratique de dévelopement. La meilleure pratique, le Test Driven Developpement, est même d'écrire chaque test en amont, avant d'écrire les lignes de code correspondantes dans la fonction. Quoiqu'il en soit, l'existence ou non de tests n'influe pas à proprement parler sur le fonctionnement du package (cette étape peut être faite plus tard). Nous conseillons tout de même d'écrire des tests, avant ou après l'écriture de la fonction. Pour cela, on utilise les deux commandes successives :
 
+\vspace{0.5cm}
 ```{r, eval=FALSE}
 use_testthat()
 use_test("Nom_de_la_fonction")
 ```
-
-Un dossier **test** apparaît lorsque ces commandes sont exécutée pour la première fois. Dedans se trouvent les fichiers de tests des fonctions du package. Un modèle d'écriture de test est présenté par défaut dans le fichier de test **test-Nom_de_la_fonction".R** créé. Pour exécuter les tests du fichier, on peut cliquer sur l'icone "Run tests" en haut à droite dans RStudio. Mais on peut aussi faire tourner l'ensemble des tests (de toutes les fonctions que l'on aura créé) avec la commande *test()*. Les raccourcis clavier correspondant à cette commande sont les suivants : CRTL + SHIFT + T pour Windows et Linux et CMD + SHIFT + T pour Mac OS.
-
 \vspace{0.5cm}
+
+Un dossier **test** apparaît lorsque ces commandes sont exécutées pour la première fois. A l'intérieur se trouvent les fichiers de tests des fonctions du package. Un modèle d'écriture de test est présenté par défaut dans le fichier de test **test-Nom_de_la_fonction.R** créé. Pour exécuter les tests du fichier, on peut cliquer sur l'icone "Run tests" en haut à droite dans RStudio. Mais on peut aussi faire tourner l'ensemble des tests du package (de toutes les fonctions que l'on aura créé) avec la commande *test()*. Les raccourcis clavier correspondant à cette commande sont les suivants : CRTL + SHIFT + T pour Windows et Linux et CMD + SHIFT + T pour Mac OS.
+
+\newpage
 **Documentation**
 \vspace{0.5cm}
 
-La fonction a également besoin d'une documentation ! Elle est essentielle pour que le package compile correctement. Pour cela, on place le curseur quelque part sur notre fonction et on ouvre le menu *Code* puis on clique sur *Insert Roxygen Skeleton*. Il suffit ensuite de compléter les champs. C'est dans ce squelette qu'on peut ajouter une entrée (#' @import ggplot2 par exemple) si besoin est, comme expliquée dans le paragraphe sur l'importation de package.
+La fonction a également besoin d'une documentation ! Elle est essentielle pour que le package compile correctement. Pour cela, on place le curseur quelque part sur notre fonction et on ouvre le menu *Code* puis on clique sur *Insert Roxygen Skeleton*. Il suffit ensuite de compléter les champs. C'est dans ce squelette que l'on peut ajouter une entrée (*#' @import ggplot2 *par exemple) si besoin est, comme expliqué dans le paragraphe sur l'importation de package.
 
-La commande *document()* est alors à exécuter. Les raccourcis clavier sont : CRTL + SHIFT + D pour Windows et Linux et CMD + SHIFT + D pour Mac OS. Cela écrit le nom de la fonction dans le fichier NAMESPACE (et ajoute un dossier **man** la première fois que la commande est exécuté : on ne s'attardera pas sur ce dossier).
+La commande *document()* est alors à exécuter. Les raccourcis clavier sont : CRTL + SHIFT + D pour Windows et Linux et CMD + SHIFT + D pour Mac OS. Cela écrit le nom de la fonction dans le fichier **NAMESPACE** (et ajoute un dossier **man** la première fois que la commande est exécuté : on ne s'attardera pas sur ce dossier).
 
-Si on exécute à nouveau *load_all()* (CRTL + SHIFT + L pour Windows et Linux et CMD + SHIFT + L pour Mac OS), la fonction ET sa documentation deviennet accessibles.
+Si on exécute à nouveau *load_all()* (CRTL + SHIFT + L pour Windows et Linux et CMD + SHIFT + L pour Mac OS), la fonction ET sa documentation deviennent accessibles.
 
 \vspace{0.5cm}
 **Vérification du bon fonctionnement du package**
@@ -217,7 +219,7 @@ Il est temps de vérifier que l'ensemble du package fonctionne. Pour cela on uti
 
 Dernière étape (non-obligatoire) : l'installation du package sur votre ordinateur. Il suffit d'exécuter la commande *install()*. Ensuite on peut appeller le package avec la commande *library(Nomdupackage)* depuis n'importe quelle session R.
 
-Toutes ces étapes sont résumées sur le schéma "Cheat sheet R packages". Elles sont appellées à être répétée de nombreuses fois, à chaque fois que l'on crée une nouvelle fonction (ou une nouvelle classe).
+Toutes ces étapes sont résumées sur le schéma "Cheat sheet R packages". Elles sont appellées à être répétées de nombreuses fois, à chaque fois que l'on crée une nouvelle fonction (ou une nouvelle classe).
 
 ![Cheat sheet R packages](Package_CS.pdf)
 

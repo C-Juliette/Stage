@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.27)  12 JUL 2021 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.27)  13 JUL 2021 08:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,30 +771,30 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 312.
 [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-427.
+425.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [6]
 <Package_CS.pdf, id=119, 1204.5pt x 1703.36375pt>
 File: Package_CS.pdf Graphic file (type pdf)
 <use Package_CS.pdf>
-Package pdftex.def Info: Package_CS.pdf  used on input line 522.
+Package pdftex.def Info: Package_CS.pdf  used on input line 525.
 (pdftex.def)             Requested size: 459.93864pt x 650.4299pt.
 
-LaTeX Warning: Float too large for page by 23.94432pt on input line 524.
+LaTeX Warning: Float too large for page by 23.94432pt on input line 527.
 
 [7] [8 <./Package_CS.pdf>] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 579--581
+Underfull \hbox (badness 10000) in paragraph at lines 582--584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--589
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
 
  []
 
@@ -802,10 +802,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 601--603
 <testsintegration.png, id=326, 633.36626pt x 201.75375pt>
 File: testsintegration.png Graphic file (type png)
 <use testsintegration.png>
-Package pdftex.def Info: testsintegration.png  used on input line 666.
+Package pdftex.def Info: testsintegration.png  used on input line 669.
 (pdftex.def)             Requested size: 469.76611pt x 149.64021pt.
 [12 <./testsintegration.png>] [13] [14] [15] [16]
-Overfull \hbox (2.7436pt too wide) in paragraph at lines 1056--1056
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 1059--1059
 []\T1/lmtt/m/n/10 ##  1. testthat::expect_error(variance(f), "^M must be a numb
 er/vector/matrix/dataframe$")[] 
  []
@@ -814,21 +814,21 @@ er/vector/matrix/dataframe$")[]
 <flipr.png, id=385, 710.655pt x 383.4325pt>
 File: flipr.png Graphic file (type png)
 <use flipr.png>
-Package pdftex.def Info: flipr.png  used on input line 1351.
+Package pdftex.def Info: flipr.png  used on input line 1354.
 (pdftex.def)             Requested size: 469.77112pt x 253.46408pt.
 [21 <./flipr.png>] [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1380.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1380.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1383.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1383.
 (./0_Rapport_stage_M1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1380.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1380.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1383.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1383.
  ) 
 Here is how much of TeX's memory you used:
- 22697 strings out of 480608
- 401107 string characters out of 5903629
+ 22693 strings out of 480608
+ 401063 string characters out of 5903629
  663858 words of memory out of 5000000
  37950 multiletter control sequences out of 15000+600000
- 605348 words of font info for 138 fonts, out of 8000000 for 9000
+ 605135 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,8n,75p,860b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
@@ -849,7 +849,7 @@ e1/public/lm/lmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/lo
 cal/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on 0_Rapport_stage_M1.pdf (22 pages, 1356687 bytes).
+Output written on 0_Rapport_stage_M1.pdf (22 pages, 1356716 bytes).
 PDF statistics:
  535 PDF objects out of 1000 (max. 8388607)
  358 compressed objects within 4 object streams
